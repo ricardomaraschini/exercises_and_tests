@@ -1,0 +1,13 @@
+<div class="container" role="main">
+  <%= link_to "Edit Hotels", list_path, class:"btn btn-default" %>
+  <div class="form-group">
+    <label for="search">Search:</label>
+    <input type="text" id="search" class="form-control"/>
+  </div>
+  <div class="progress" style="visibility:hidden" id="progressBar">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    </div>
+  </div>
+  <div id="filtered" class="list-group">
+  </div>
+</div>

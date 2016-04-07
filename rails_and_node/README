@@ -1,0 +1,28 @@
+Split project into three main components
+
+- mongodb database
+- backend
+- frontend
+
+Backend has been developed using node.js, while
+frontend uses Ruby On Rails.
+
+Installing
+
+- mongodb database
+	$ docker pull mongo
+	$ docker run --name=mongoserver docker.io/mongo
+
+- backend
+	$ cd backend
+	$ docker build -t ricardo/backend .
+	$ docker run --link mongoserver --name=nodejs ricardo/backend
+
+- frontend
+	$ cd frontend
+	$ docker build -t ricardo/frontend .
+	$ docker run --link nodejs -p 3000:3000 --name=rails ricardo/frontend
+
+Access:
+
+http://localhost:3000

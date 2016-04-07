@@ -1,0 +1,18 @@
+<div class="container" role="main">
+  <div class="list-group">
+    <% @hotels.each do |hotel| %>
+      <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <%= hotel.name %>
+        </h4>
+        <p class="list-group-item-text">
+          <%= hotel.address %>
+        </p>
+	<%= link_to "", edit_hotel_path(hotel._id), class:"btn btn-default glyphicon glyphicon-edit" %>
+	<%= link_to "", hotel_path(hotel._id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-default glyphicon glyphicon-remove" %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "New Hotel", new_hotel_path, class:"btn btn-default" %>
+  <%= link_to "Back", root_path, class:"btn btn-default" %>
+</div>
